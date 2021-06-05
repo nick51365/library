@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="library.css">
+    </head>
+    <body>
+        <div class="addBook">
+            <h1>
+               Library 
+            </h1>
+            <div class="formWrapper">
+                <form>
+                    <input id="title" placeholder="Title">
+                    <input id="author" placeholder = "Author">
+                    <input id="pages" placeholder="No. of Pages">
+                        <div id="checkWrapper">
+                            <input type="checkbox" id="checkbox">
+                            <label for="checkbox">I have already read this book!</label>
+                        </div>   
+                    <button id=submit>Add New Book</button>
+                </form>
+            </div>
+        </div>
+        <div class="tableWrapper">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>One Title</td>
+                    <td>An Author</td>
+                    <td>126</td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td>Another Title</td>
+                    <td>Some Guy</td>
+                    <td>2277</td>
+                    <td><button></button></td>
+                </tr>
+            </table>
+        </div>
+        <script src="library.js"></script>
+    </body>
+</html>
