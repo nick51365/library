@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Library</title>
         <link rel="stylesheet" href="library.css">
     </head>
     <body>
         <div class="addBook">
             <h1>
+                <img class="logo" src="logo.png">
                Library 
             </h1>
             <div class="formWrapper">
-                <form>
-                    <input id="title" placeholder="Title">
-                    <input id="author" placeholder = "Author">
-                    <input id="pages" placeholder="No. of Pages">
-                        <div id="checkWrapper">
-                            <input type="checkbox" id="checkbox">
-                            <label for="checkbox">I have already read this book!</label>
-                        </div>   
-                    <button id=submit>Add New Book</button>
+                <form action="#" id="form">
+                    <div>
+                        <input name="title" id="title" placeholder="Title">
+                    </div>
+                    <div>
+                        <input name="author" id="author" placeholder = "Author">
+                    </div>
+                    <div>
+                        <input name="pages" id="pages" placeholder="No. of Pages">
+                    </div>
+                    <div id="checkWrapper">
+                        <input name="read" type="checkbox" id="read">
+                        <label for="checkbox">I have already read this book!</label>
+                    </div>   
+                    <button id="submit">Add New Book</button>
                 </form>
             </div>
         </div>
@@ -28,21 +36,10 @@
                         <th>Title</th>
                         <th>Author</th>
                         <th>Pages</th>
+                        <th>Read</th>
                         <th>Remove</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>One Title</td>
-                    <td>An Author</td>
-                    <td>126</td>
-                    <td><button></button></td>
-                </tr>
-                <tr>
-                    <td>Another Title</td>
-                    <td>Some Guy</td>
-                    <td>2277</td>
-                    <td><button></button></td>
-                </tr>
             </table>
         </div>
         <script src="library.js"></script>

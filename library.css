@@ -45,7 +45,7 @@ input{
     flex-direction: row;
     align-items: center;
 }
-#checkbox{
+#read{
     width: 13px;
 }
 #submit{
@@ -58,4 +58,10 @@ th{
     width: 69vw;
     background-color:rgb(59, 153, 207);
     font-size: 20px;
+}
+.logo{
+    position: fixed;
+    left:15px;
+    height: 45px;
+    width: 45px;
 }
