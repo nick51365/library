@@ -1,18 +1,5 @@
 //"library" array contains all submitted books
-let library = [
-    {
-    title: "Add This Title",
-    author: "JS Programmer",
-    pages: 199,
-    read: "Yes",
-    },
-    {
-    title: "This Title Too",
-    author: "Writer of Books",
-    pages: 99,
-    read: "No",
-    },    
-];
+let library = [];
 
 //Book constructor function
 function Book (title, author, pages, read){
@@ -20,12 +7,10 @@ function Book (title, author, pages, read){
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function(){
-        return title,"by",author,",",pages,"pages",",",read 
-    }
 }
 
 //Loops through "library" array and displays contents in HTML table
+//For displaying existing books on page load
 let table = document.getElementById("table");
 function displayBooks(library){
     for (i = 0; i < library.length; i++){
@@ -57,38 +42,33 @@ function addBook(library){
     cell2.innerHTML = library[pos].author;
     cell3.innerHTML = library[pos].pages;
     cell4.innerHTML = library[pos].read;
-    cell5.innerHTML = "<button></button";
-}
+    cell5.innerHTML = "<button id=${`btn`+`pos`}> </button";
+};
 
 //Adds event listener to form
 const form = document.getElementById("form");
 form.addEventListener("submit", function(event){
     event.preventDefault();
-
-    //Gets data from form fields and assigns to variables
-    let title = document.getElementById("title").value;
-    let author = document.getElementById("author").value;
-    let pages = document.getElementById("pages").value;
-    let checkbox = document.getElementById("read");
-    let bookRead = "";
-    
+  
     //Checks if "already read" checkbox is checked, then assigns "yes" or "no"
+    let checkbox = document.getElementById("read");
+    let read = "";
     if(checkbox.checked === true){
-         bookRead = "Yes";
+         read = "Yes";
     }else{
-         bookRead = "No";
+         read = "No";
     }
 
-    //Initialize an empty object named "data"
-    let data = {
-        title: title,
-        author: author,
-        pages: pages,
-        read: bookRead,
-    };
+    //Creates new Book object containing form values
+    let book = new Book(
+        document.getElementById("title").value, 
+        document.getElementById("author").value, 
+        document.getElementById("pages").value, 
+        read
+        );
 
-    //Add "data" object to "library" array
-    library.push(data);
+    //Add "book" object to "library" array
+    library.push(book);
 
     //Adds last "library" entry to HTML table
     addBook(library);
