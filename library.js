@@ -1,8 +1,31 @@
 //Unique entryID for each library entry
+//0 indexed, Currently at 3 because of preexisting entries
 let entryID = 0;
 
 //"library" array contains all submitted books
-let library = [];
+let library = [
+    {
+        title:"Eloquent Javascript",
+        author:"Marijn Haverbeke",
+        pages:327,
+        read:"No",
+        entryID: 0,
+    },
+    {
+        title:"The Pragmatic Programmer",
+        author:"Andy Hunt",
+        pages:642,
+        read:"No",
+        entryID: 1,
+    },
+    {
+        title:"Frying Chicken for Dummies",
+        author:"Harland Sanders",
+        pages:126,
+        read:"Yes",
+        entryID: 2,
+    },
+];
 
 //Book constructor function
 function Book (title, author, pages, read, entryID){
@@ -109,35 +132,34 @@ form.addEventListener("submit", function(event){
     document.getElementById("read").checked = false;
 });
 
+//Displays existing books on page load
+displayBooks(library);
 
 
 //Example books to prepopulate library for testing purposes
-library.push(new Book (
-    "First Textbook",
-    "Writer of Book",
-    123,
-    "Yes",
-    entryID,
-))
-addBook(library);
+// library.push(new Book (
+//     "First Textbook",
+//     "Writer of Book",
+//     123,
+//     "Yes",
+//     entryID,
+// ))
+// addBook(library);
 
-library.push(new Book(
-    "Another Book",
-    "Smart Person",
-    456,
-    "No",
-    entryID,
-))
-addBook(library);
+// library.push(new Book(
+//     "Another Book",
+//     "Smart Person",
+//     456,
+//     "No",
+//     entryID,
+// ))
+// addBook(library);
 
-library.push(new Book(
-    "One More Example",
-    "Idiot",
-    42069,
-    "No",
-    entryID,
-))
-addBook(library);
-
-
-
+// library.push(new Book(
+//     "One More Example",
+//     "Idiot",
+//     42069,
+//     "No",
+//     entryID,
+// ))
+// addBook(library);
