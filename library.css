@@ -65,3 +65,13 @@ th{
     height: 45px;
     width: 45px;
 }
+.remove{
+    background-image: url(delete.jpg);
+    background-size:cover;
+    background-color: transparent;
+    background-position: 50% 50%;
+    height: 30px;
+    width: 30px;
+    border:none;
+    margin-left: 20px;;
+}
