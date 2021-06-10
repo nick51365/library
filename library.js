@@ -1,5 +1,4 @@
 //Unique entryID for each library entry
-//0 indexed, Currently at 3 because of preexisting entries
 let entryID = 0;
 
 //"library" array contains all submitted books
