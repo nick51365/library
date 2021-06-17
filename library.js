@@ -26,13 +26,15 @@ let library = [
     },
 ];
 
-//Book constructor function
-function Book (title, author, pages, read, entryID){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.entryID = entryID
+//Book class to create Book objects
+class Book {
+    constructor (title, author, pages, read, entryID){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.entryID = entryID;
+    }
 }
 
 //Loops through "library" array and displays contents in HTML table
@@ -83,16 +85,13 @@ function addBook(library){
 function removeRow(delButton){
     const rowIndex = delButton.parentNode.parentNode.rowIndex;
     document.getElementById("table").deleteRow(rowIndex)
-    console.log(delButton.parentNode.parentNode.getAttribute("data-id"));
 
 //Finds corresponding Book object in library and deletes it
     for (i = 0; i < library.length; i++){
         if (library[i].entryID == delButton.parentNode.parentNode.getAttribute("data-id")){
             library.splice(i, 1)
-            console.log(library);
         }
     }
-    console.log(library);
 }
 
 //Adds event listener to form
@@ -133,32 +132,3 @@ form.addEventListener("submit", function(event){
 
 //Displays existing books on page load
 displayBooks(library);
-
-
-//Example books to prepopulate library for testing purposes
-// library.push(new Book (
-//     "First Textbook",
-//     "Writer of Book",
-//     123,
-//     "Yes",
-//     entryID,
-// ))
-// addBook(library);
-
-// library.push(new Book(
-//     "Another Book",
-//     "Smart Person",
-//     456,
-//     "No",
-//     entryID,
-// ))
-// addBook(library);
-
-// library.push(new Book(
-//     "One More Example",
-//     "Idiot",
-//     42069,
-//     "No",
-//     entryID,
-// ))
-// addBook(library);
